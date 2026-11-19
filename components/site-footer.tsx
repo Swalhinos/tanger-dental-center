@@ -70,6 +70,17 @@ export function SiteFooter() {
 
       <div className="border-t border-navy-foreground/10 py-5 text-center text-xs text-navy-foreground/50">
         {`© ${new Date().getFullYear()} ${CLINIC.name}. ${t.footer.rights}`}
+        <span className="mt-1 block">
+          Icons by{' '}
+          <a
+            href="https://www.flaticon.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-offset-2 transition-colors hover:text-primary hover:underline"
+          >
+            Flaticon
+          </a>
+        </span>
       </div>
     </footer>
   )

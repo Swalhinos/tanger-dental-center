@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     'Tanger Dental Center — centre dentaire pluridisciplinaire à Tanger : implantologie, chirurgie orale, parodontologie, orthodontie, blanchiment et facettes, soins pour toute la famille. Place Moulay Abdelaziz, Résidence Ennasr, 90000 Tanger. Réservez sur WhatsApp.',
   keywords: ['Tanger Dental Center', 'dentiste Tanger', 'dentiste à Tanger', 'centre dentaire Tanger', 'implants dentaires Tanger', 'orthodontie Tanger', 'blanchiment dentaire Tanger', 'مركز طب الأسنان طنجة', 'طبيب أسنان طنجة'],
   icons: {
-    icon: '/images/logo-mark.png',
-    apple: '/images/logo-mark.png',
+    icon: '/images/logo-favicon.png',
+    apple: '/images/logo-favicon.png',
   },
   openGraph: {
     title: 'Tanger Dental Center | Centre dentaire à Tanger',

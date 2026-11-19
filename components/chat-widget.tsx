@@ -145,7 +145,7 @@ export function ChatWidget() {
   return (
     <>
       {open && (
-        <div className="fixed bottom-24 right-5 z-50 flex h-[min(70vh,540px)] w-[min(92vw,380px)] flex-col overflow-hidden rounded-3xl border border-border bg-background shadow-2xl shadow-black/25">
+        <div className="fixed bottom-[152px] left-5 z-50 flex h-[min(70vh,540px)] w-[min(92vw,380px)] flex-col overflow-hidden rounded-3xl border border-border bg-background shadow-2xl shadow-black/25">
           <div className="flex items-center gap-3 bg-gradient-to-r from-[#14273D] via-navy to-[#2E6E9E] px-4 py-3 text-navy-foreground">
             <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-white/15 shadow-md ring-1 ring-white/25">
               <ChatBotIcon className="size-6" />
@@ -260,11 +260,15 @@ export function ChatWidget() {
         </div>
       )}
 
+      {/* Launcher sits in the bottom-left stack, directly above the WhatsApp
+          button: WhatsApp occupies bottom 20px + 52px height, then a 12px
+          gap puts this 56px launcher at bottom-[84px]. The panel above uses
+          bottom-[152px] (84 + 56 + 12) so it clears the whole stack. */}
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={s.open}
-        className="fixed bottom-5 right-5 z-50 rounded-full shadow-xl shadow-navy/40 ring-1 ring-black/10 transition-transform hover:scale-105"
+        className="fixed bottom-[84px] left-5 z-50 rounded-full shadow-xl shadow-navy/40 ring-1 ring-black/10 transition-transform hover:scale-105"
       >
         {open ? (
           <span className="flex size-14 items-center justify-center rounded-full bg-navy text-navy-foreground">

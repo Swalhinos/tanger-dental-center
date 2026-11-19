@@ -1,32 +1,24 @@
 'use client'
 
+import Image from 'next/image'
 import { useLanguage } from '@/lib/language-context'
-import {
-  BracesIcon,
-  CrownIcon,
-  EmergencyIcon,
-  GuardIcon,
-  GumIcon,
-  ImplantIcon,
-  KidsIcon,
-  ShieldIcon,
-  WhiteningIcon,
-} from '@/components/service-icons'
 
-// One consistent icon system: the shared inline-SVG family in
-// components/service-icons.tsx (24 viewBox, 2px stroke, currentColor).
+// Detailed full-colour service icons (Flaticon free licence, attribution in
+// the site footer). One consistent dental pack family for 9 of 10 services;
+// the paediatric card uses a matching full-colour milk-tooth + pacifier icon
+// (same licence) — tooth-based, no child figure.
 // Order matches the 10 services in lib/translations.ts.
 const icons = [
-  ImplantIcon,
-  EmergencyIcon,
-  GumIcon,
-  ShieldIcon,
-  CrownIcon,
-  WhiteningIcon,
-  BracesIcon,
-  KidsIcon,
-  ShieldIcon,
-  GuardIcon,
+  '/images/icons/service-implant.png', // Implantologie
+  '/images/icons/service-surgery.png', // Chirurgie orale
+  '/images/icons/service-perio.png', // Parodontologie
+  '/images/icons/service-rootcanal.png', // Soins conservateurs
+  '/images/icons/service-prosthesis.png', // Prothèses & couronnes
+  '/images/icons/service-veneer.png', // Blanchiment & facettes
+  '/images/icons/service-braces.png', // Orthodontie & aligneurs
+  '/images/icons/service-kids.png', // Dentisterie pédiatrique
+  '/images/icons/service-scaling.png', // Détartrage & prévention
+  '/images/icons/service-bruxism.png', // Bruxisme & gouttières
 ]
 
 export function Services() {
@@ -47,25 +39,28 @@ export function Services() {
           </p>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {t.services.items.map((service, i) => {
-            const Icon = icons[i % icons.length]
-            return (
-              <article
-                key={service.title}
-                className="group flex flex-col gap-4 rounded-2xl border border-border bg-background p-6 transition-shadow hover:shadow-lg hover:shadow-primary/10"
-              >
-                <span className="flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/25 to-navy/15 text-navy shadow-inner">
-                  <Icon className="h-8 w-8" />
-                </span>
-                <h3 className="font-serif text-lg font-semibold text-navy">
-                  {service.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {service.desc}
-                </p>
-              </article>
-            )
-          })}
+          {t.services.items.map((service, i) => (
+            <article
+              key={service.title}
+              className="group flex flex-col gap-4 rounded-2xl border border-border bg-background p-6 transition-shadow hover:shadow-lg hover:shadow-primary/10"
+            >
+              <span className="flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/15 to-navy/5 shadow-inner">
+                <Image
+                  src={icons[i % icons.length]}
+                  alt={service.title}
+                  width={512}
+                  height={512}
+                  className="size-14 object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
+                />
+              </span>
+              <h3 className="font-serif text-lg font-semibold text-navy">
+                {service.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {service.desc}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

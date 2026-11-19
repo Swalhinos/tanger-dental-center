@@ -8,15 +8,17 @@ export function WhatsAppButton() {
   const { t } = useLanguage()
 
   return (
-    <a
-      href={CLINIC.whatsapp}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="fixed bottom-5 left-5 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3.5 text-white shadow-xl shadow-black/20 transition-transform hover:scale-105"
-      aria-label={`${t.hero.whatsapp} — ${CLINIC.whatsappDisplay}`}
-    >
-      <WhatsAppIcon className="size-6" />
-      <span className="hidden text-sm font-semibold sm:inline">{t.hero.whatsapp}</span>
-    </a>
+    <div className="fixed bottom-5 left-5 z-50">
+      <a
+        href={CLINIC.whatsapp}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3.5 text-white shadow-xl shadow-black/20 transition-transform hover:scale-105"
+        aria-label={`${t.hero.whatsapp} — ${CLINIC.whatsappDisplay}`}
+      >
+        <WhatsAppIcon className="size-6" />
+        <span className="hidden text-sm font-semibold sm:inline">{t.hero.whatsapp}</span>
+      </a>
+    </div>
   )
 }
