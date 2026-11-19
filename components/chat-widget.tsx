@@ -118,6 +118,24 @@ export function ChatWidget() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open ])
 
+  // While the panel is open, the page behind it must not scroll at all:
+  // lock overflow on <html> and <body>, and restore the exact previous
+  // values when the panel closes. The messages area keeps its own scroll
+  // (with overscroll-behavior: contain, below) so gestures stay in the chat.
+  useEffect(() => {
+    if (!open) return
+    const html = document.documentElement
+    const body = document.body
+    const prevHtmlOverflow = html.style.overflow
+    const prevBodyOverflow = body.style.overflow
+    html.style.overflow = 'hidden'
+    body.style.overflow = 'hidden'
+    return () => {
+      html.style.overflow = prevHtmlOverflow
+      body.style.overflow = prevBodyOverflow
+    }
+  }, [open ])
+
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
   }, [messages, sending, open])
@@ -145,7 +163,18 @@ export function ChatWidget() {
   return (
     <>
       {open && (
-        <div className="fixed bottom-[152px] left-5 z-50 flex h-[min(70vh,540px)] w-[min(92vw,380px)] flex-col overflow-hidden rounded-3xl border border-border bg-background shadow-2xl shadow-black/25">
+        // Backdrop: covers the whole page (above content and the floating
+        // buttons, below the panel and its launcher) — tapping anywhere
+        // outside the panel closes the chat.
+        <div
+          aria-hidden="true"
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 z-[60] bg-[#102743]/15"
+        />
+      )}
+
+      {open && (
+        <div className="fixed bottom-[152px] left-5 z-[70] flex h-[min(70vh,540px)] w-[min(92vw,380px)] flex-col overflow-hidden rounded-3xl border border-border bg-background shadow-2xl shadow-black/25">
           <div className="flex items-center gap-3 bg-gradient-to-r from-[#14273D] via-navy to-[#2E6E9E] px-4 py-3 text-navy-foreground">
             <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-white/15 shadow-md ring-1 ring-white/25">
               <ChatBotIcon className="size-6" />
@@ -164,7 +193,7 @@ export function ChatWidget() {
             </button>
           </div>
 
-          <div ref={scrollRef} className="flex flex-1 flex-col gap-2.5 overflow-y-auto bg-secondary/40 px-3.5 py-4">
+          <div ref={scrollRef} className="flex flex-1 flex-col gap-2.5 overflow-y-auto overscroll-contain bg-secondary/40 px-3.5 py-4">
             {messages.map((m, i) => (
               <div key={i} className={`flex flex-col ${m.role === 'user' ? 'items-end' : 'items-start'}`}>
                 <div
@@ -268,7 +297,7 @@ export function ChatWidget() {
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={s.open}
-        className="fixed bottom-[84px] left-5 z-50 rounded-full shadow-xl shadow-navy/40 ring-1 ring-black/10 transition-transform hover:scale-105"
+        className="fixed bottom-[84px] left-5 z-[70] rounded-full shadow-xl shadow-navy/40 ring-1 ring-black/10 transition-transform hover:scale-105"
       >
         {open ? (
           <span className="flex size-14 items-center justify-center rounded-full bg-navy text-navy-foreground">

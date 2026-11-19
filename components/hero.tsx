@@ -82,7 +82,7 @@ export function Hero() {
           <div className="overflow-hidden rounded-3xl shadow-xl shadow-primary/20">
             <Image
               src="/images/clinic-hero.webp"
-              alt="Dental implant model at Tanger Dental Center, Tangier"
+              alt="Modern dental treatment room with a dental chair at Tanger Dental Center, Tangier"
               width={720}
               height={560}
               priority
