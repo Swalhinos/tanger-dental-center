@@ -12,13 +12,16 @@ export function About() {
       <div className="relative order-2 lg:order-1">
         <div className="overflow-hidden rounded-3xl">
           <Image
-            src="/images/clinic-about.webp"
-            alt="Dental crown model at Tanger Dental Center"
-            width={640}
-            height={720}
+            src="/images/doctor.webp"
+            alt={t.about.imageAlt}
+            width={768}
+            height={864}
             className="h-full w-full object-cover"
           />
         </div>
+        <p className="absolute bottom-4 left-4 rounded-full bg-background/95 px-4 py-2 text-xs font-medium text-navy shadow-sm rtl:left-auto rtl:right-4">
+          {t.about.doctorCaption}
+        </p>
         <div className="absolute -right-3 -top-3 -z-10 h-full w-full rounded-3xl bg-primary/20 md:-right-5 md:-top-5" aria-hidden="true" />
       </div>
 

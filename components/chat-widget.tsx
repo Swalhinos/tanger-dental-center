@@ -6,6 +6,7 @@ import { useLanguage } from '@/lib/language-context'
 import { CLINIC, type Lang } from '@/lib/translations'
 import { faqAnswer } from '@/lib/chat-faq'
 import { WhatsAppIcon } from '@/components/whatsapp-icon'
+import { ChatBotIcon } from '@/components/chat-bot-icon'
 
 type CardKind = 'whatsapp' | 'booking' | 'maps' | 'phone'
 type ChatMessage = { role: 'user' | 'assistant'; text: string; local?: boolean; cards?: CardKind[]; answerLang?: Lang }
@@ -27,7 +28,7 @@ const CARD_DEFS: Record<
   booking: {
     href: '#appointment',
     external: false,
-    bg: 'bg-gradient-to-r from-[#141310] to-[#7a5f1b] shadow-black/30',
+    bg: 'bg-gradient-to-r from-[#14273D] to-[#2E6E9E] shadow-navy/30',
     Icon: CalendarCheck,
     label: { fr: 'Prendre rendez-vous ici', ar: 'احجز موعدك هنا', en: 'Book your appointment here' },
     sub: { fr: 'Formulaire du site', ar: 'نموذج الموقع', en: 'Website form' },
@@ -145,12 +146,10 @@ export function ChatWidget() {
     <>
       {open && (
         <div className="fixed bottom-24 right-5 z-50 flex h-[min(70vh,540px)] w-[min(92vw,380px)] flex-col overflow-hidden rounded-3xl border border-border bg-background shadow-2xl shadow-black/25">
-          <div className="flex items-center gap-3 bg-gradient-to-r from-[#0c0c0e] via-navy to-[#7a5f1b] px-4 py-3 text-navy-foreground">
-            <img
-              src="/images/chat-icon.png"
-              alt=""
-              className="size-10 shrink-0 rounded-full object-cover shadow-md"
-            />
+          <div className="flex items-center gap-3 bg-gradient-to-r from-[#14273D] via-navy to-[#2E6E9E] px-4 py-3 text-navy-foreground">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-white/15 shadow-md ring-1 ring-white/25">
+              <ChatBotIcon className="size-6" />
+            </span>
             <span className="min-w-0 flex-1">
               <span className="block truncate text-sm font-semibold">{s.title}</span>
               <span className="block text-xs opacity-80">{s.subtitle}</span>
@@ -272,7 +271,9 @@ export function ChatWidget() {
             <X className="size-6" />
           </span>
         ) : (
-          <img src="/images/chat-icon.png" alt="" className="block size-14 rounded-full object-cover" />
+          <span className="flex size-14 items-center justify-center rounded-full bg-navy text-navy-foreground">
+            <ChatBotIcon className="size-7" />
+          </span>
         )}
       </button>
     </>

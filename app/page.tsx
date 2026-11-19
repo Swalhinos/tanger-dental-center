@@ -8,6 +8,7 @@ import { Services } from '@/components/services'
 import { WhyChooseUs } from '@/components/why-choose-us'
 import { Testimonials } from '@/components/testimonials'
 import { ImplantsSection } from '@/components/implants-section'
+import { Results } from '@/components/results'
 import { Faq } from '@/components/faq'
 import { AppointmentForm } from '@/components/appointment-form'
 import { ContactMap } from '@/components/contact-map'
@@ -24,6 +25,7 @@ export default function Page() {
         <About />
         <Services />
         <ImplantsSection />
+        <Results />
         <WhyChooseUs />
         <Testimonials />
         <Faq />

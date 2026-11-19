@@ -39,28 +39,28 @@
 
 :root {
   color-scheme: light;
-  /* Tanger Dental Center brand: black + gold luxury on warm ivory */
-  --background: oklch(0.985 0.008 85);
-  --foreground: oklch(0.19 0.01 70);
-  --card: oklch(0.995 0.004 85);
-  --card-foreground: oklch(0.19 0.01 70);
-  --popover: oklch(0.995 0.004 85);
-  --popover-foreground: oklch(0.19 0.01 70);
-  --primary: oklch(0.72 0.115 82);
-  --primary-foreground: oklch(0.16 0.01 70);
-  --secondary: oklch(0.955 0.014 85);
-  --secondary-foreground: oklch(0.19 0.01 70);
-  --muted: oklch(0.955 0.014 85);
-  --muted-foreground: oklch(0.47 0.02 75);
-  --accent: oklch(0.17 0.008 70);
-  --accent-foreground: oklch(0.98 0.005 85);
-  --navy: oklch(0.16 0.008 70);
-  --navy-foreground: oklch(0.96 0.012 85);
-  --sky-soft: oklch(0.95 0.022 85);
+  /* Light blue #4FC3F7 primary, white secondary, dark navy accent */
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.27 0.05 255);
+  --card: oklch(0.99 0.005 230);
+  --card-foreground: oklch(0.27 0.05 255);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.27 0.05 255);
+  --primary: oklch(0.78 0.11 230);
+  --primary-foreground: oklch(0.18 0.05 255);
+  --secondary: oklch(0.96 0.015 230);
+  --secondary-foreground: oklch(0.27 0.05 255);
+  --muted: oklch(0.96 0.015 230);
+  --muted-foreground: oklch(0.5 0.03 250);
+  --accent: oklch(0.27 0.06 255);
+  --accent-foreground: oklch(1 0 0);
+  --navy: oklch(0.27 0.06 255);
+  --navy-foreground: oklch(0.98 0.005 230);
+  --sky-soft: oklch(0.95 0.03 225);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.89 0.018 85);
-  --input: oklch(0.89 0.018 85);
-  --ring: oklch(0.72 0.115 82);
+  --border: oklch(0.91 0.02 230);
+  --input: oklch(0.91 0.02 230);
+  --ring: oklch(0.78 0.11 230);
   --radius: 0.75rem;
 }
 

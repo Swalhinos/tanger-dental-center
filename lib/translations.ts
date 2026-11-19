@@ -61,6 +61,8 @@ const fr = {
       'Traitements expliqués avant chaque étape',
       'Rendez-vous simple et rapide par WhatsApp',
     ],
+    imageAlt: 'Médecin-dentiste du Tanger Dental Center dans la salle de soins',
+    doctorCaption: 'Une prise en charge professionnelle, en toute confiance',
   },
   services: {
     badge: 'Nos services',
@@ -120,6 +122,34 @@ const fr = {
       'Solution durable, conçue pour durer de nombreuses années',
     ],
     cta: 'Discuter de mon implant sur WhatsApp',
+  },
+  results: {
+    badge: 'Résultats',
+    title: 'Résultats avant / après',
+    subtitle: 'Blanchiment, facettes, implants : découvrez l’effet de nos traitements sur le sourire.',
+    before: 'Avant',
+    after: 'Après',
+    note: 'Photos d’illustration issues de banques d’images libres de droits — les résultats varient selon chaque cas.',
+    items: [
+      {
+        title: 'Blanchiment dentaire',
+        desc: 'Des dents visiblement plus blanches et un sourire éclatant après une séance de blanchiment professionnel.',
+        altBefore: 'Sourire d’homme aux dents jaunies avant blanchiment',
+        altAfter: 'Sourire d’homme aux dents blanches et éclatantes après blanchiment',
+      },
+      {
+        title: 'Facettes dentaires',
+        desc: 'Correction des espaces et des irrégularités pour un sourire aligné, régulier et naturel.',
+        altBefore: 'Sourire d’homme avec un espace entre les dents avant facettes',
+        altAfter: 'Sourire d’homme aligné et uniforme après facettes',
+      },
+      {
+        title: 'Implants dentaires',
+        desc: 'Remplacement des dents manquantes par des implants fixes, pour un sourire complet et durable.',
+        altBefore: 'Sourire d’homme avec des dents manquantes avant implants',
+        altAfter: 'Sourire d’homme complet et naturel après implants',
+      },
+    ],
   },
   why: {
     badge: 'Pourquoi nous choisir',
@@ -265,6 +295,8 @@ const en = {
       'Treatments explained before each step',
       'Simple, fast booking via WhatsApp',
     ],
+    imageAlt: 'Dentist at Tanger Dental Center in the treatment room',
+    doctorCaption: 'Professional care, with complete confidence',
   },
   services: {
     badge: 'Our Services',
@@ -324,6 +356,34 @@ const en = {
       'A durable solution built to last for many years',
     ],
     cta: 'Discuss My Implant on WhatsApp',
+  },
+  results: {
+    badge: 'Results',
+    title: 'Before / After Results',
+    subtitle: 'Whitening, veneers and implants: discover the effect of our treatments on your smile.',
+    before: 'Before',
+    after: 'After',
+    note: 'Illustrative photos from royalty-free image libraries — results vary from one case to another.',
+    items: [
+      {
+        title: 'Teeth Whitening',
+        desc: 'Visibly whiter teeth and a radiant smile after one professional whitening session.',
+        altBefore: 'Man’s smile with yellowed teeth before whitening',
+        altAfter: 'Man’s smile with bright white teeth after whitening',
+      },
+      {
+        title: 'Dental Veneers',
+        desc: 'Gaps and irregularities corrected for an aligned, even and natural-looking smile.',
+        altBefore: 'Man’s smile with a gap between the teeth before veneers',
+        altAfter: 'Man’s aligned and uniform smile after veneers',
+      },
+      {
+        title: 'Dental Implants',
+        desc: 'Missing teeth replaced with fixed implants, for a complete and long-lasting smile.',
+        altBefore: 'Man’s smile with missing teeth before implants',
+        altAfter: 'Man’s complete and natural smile after implants',
+      },
+    ],
   },
   why: {
     badge: 'Why Choose Us',
@@ -468,6 +528,8 @@ const ar = {
       'شرح العلاجات قبل كل خطوة',
       'حجز بسيط وسريع عبر واتساب',
     ],
+    imageAlt: 'طبيب أسنان مركز Tanger Dental Center في غرفة العلاج',
+    doctorCaption: 'رعاية احترافية بكل ثقة',
   },
   services: {
     badge: 'خدماتنا',
@@ -527,6 +589,34 @@ const ar = {
       'حلّ متين مصمّم ليدوم سنوات عديدة',
     ],
     cta: 'ناقش زرعتك عبر واتساب',
+  },
+  results: {
+    badge: 'النتائج',
+    title: 'نتائج قبل / بعد',
+    subtitle: 'التبييض والفينير والزراعة: اكتشفوا أثر علاجاتنا على الابتسامة.',
+    before: 'قبل',
+    after: 'بعد',
+    note: 'صور توضيحية من مكتبات صور مجانية — تختلف النتائج من حالة إلى أخرى.',
+    items: [
+      {
+        title: 'تبييض الأسنان',
+        desc: 'أسنان أكثر بياضًا بشكل واضح وابتسامة مشرقة بعد جلسة تبييض احترافية واحدة.',
+        altBefore: 'ابتسامة رجل بأسنان مصفرّة قبل التبييض',
+        altAfter: 'ابتسامة رجل بأسنان بيضاء مشرقة بعد التبييض',
+      },
+      {
+        title: 'فينير الأسنان',
+        desc: 'تصحيح الفراغات وعدم الانتظام من أجل ابتسامة متناسقة ومنتظمة وطبيعية.',
+        altBefore: 'ابتسامة رجل مع فراغ بين الأسنان قبل الفينير',
+        altAfter: 'ابتسامة رجل متناسقة ومنتظمة بعد الفينير',
+      },
+      {
+        title: 'زراعة الأسنان',
+        desc: 'تعويض الأسنان المفقودة بزرعات ثابتة من أجل ابتسامة كاملة ودائمة.',
+        altBefore: 'ابتسامة رجل بأسنان مفقودة قبل الزراعة',
+        altAfter: 'ابتسامة رجل كاملة وطبيعية بعد الزراعة',
+      },
+    ],
   },
   why: {
     badge: 'لماذا تختارنا',
